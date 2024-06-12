@@ -1,25 +1,27 @@
-# Tech radar
-You can play with a version of the radar deployed on netlify [here](https://tech-radar-hugo.netlify.app/)
+# Hugo Module
 
-## What ?
+TODO
+
+# Tech radar
+
+## About
 
 The Radar is a document that sets out the changes that are currently interesting regarding software development.  
-It is published by a company called Thoughtworks.  
 You can find more information about it [here](https://www.thoughtworks.com/radar/faq).
-
-## Why ?
-
-I have developed this radar because in many organizations we want to document the usage of technologies in an easy way.
-People who wants to document something just need to push a new md file in the repository.
 
 ![tech-radar](static/images/preview.png)
 
 ![tech-radar](/static/images/preview-rings.png)
 
-## How to use it ?
+### Source Code
 
-The tech radar is built based on the elements specified in the content folder :  
-To add new content to the radar :  
+The javascript source code of the radar has been copied from [here](https://github.com/agilepartner/tech-radar-js)
+
+## Usage
+
+The tech radar is built based on the elements specified in the content folder.  
+
+To add new content to the radar:
 * **Create a new md file** under the desired category folder in the `content` folder
     * languages-frameworks
     * platforms
@@ -43,7 +45,8 @@ layout="details"
     * `Resources` : Useful resources on this technology
     * `Contacts` : Make a list of teams or people using the technology (people that could help on the topic in the near future)
 
-### File example
+### File Example
+
 A file should look like this :
 ```
 +++
@@ -77,26 +80,4 @@ Sed ullamcorper nibh eget massa dapibus hendrerit. Nulla facilisi. Aliquam erat 
 
 # Contacts
 - [Yoan Thirion](https://www.linkedin.com/in/yoanthirion/)
-```
-
-Once you have created a new file, you can push it.
-The related item will be presented on the radar.
-
-## Update the radar javascript
-If you want to customize the rendering of the radar, the javascript source code of the radar is available [here](https://github.com/agilepartner/tech-radar-js)
-
-> To integrate the built code you have to : 
-Paste the generated script in the `/layouts/_default/radar.html`script part
-
-## Setup your dev environment
-[Install hugo](https://gohugo.io/getting-started/installing/) or simply add the binary file at the root of the repository
-
-## Serve the radar
-```
-hugo -w server
-```
-
-## Build the website
-```
-hugo --config prod.toml
 ```
