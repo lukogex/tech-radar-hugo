@@ -1,9 +1,1 @@
-# Mac
-.DS_Store
- 
-# Maven
-log/
-target/
-
-resources/
-public/
+node_modules
