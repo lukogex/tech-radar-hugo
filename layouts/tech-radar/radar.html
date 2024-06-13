@@ -1,9 +1,9 @@
-{{- partial "head.html" . -}}
+{{- partial "tech-radar-head.html" . -}}
 
 <body>
 
 {{ with resources.Get "tech-radar/site.js" }}
-  {{ if hugo.IsDevelopment }
+  {{ if hugo.IsDevelopment }}
     {{ with . | js.Build }}
       <script src="{{ .RelPermalink }}"></script>
     {{ end }}
@@ -35,22 +35,20 @@
   <div class="page-modals" id="pageModals" tabindex="-1" role="dialog" aria-hidden="true">
     <div id="pageModalsOverlayer"></div>
     {{ range where .Site.Pages "Params.category" "Languages-Frameworks"}}
-        {{ partial "modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
+        {{ partial "tech-radar-modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
     {{ end }}
 
     {{ range where .Site.Pages "Params.category" "Platforms"}}
-        {{ partial "modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
+        {{ partial "tech-radar-modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
     {{ end }}
 
     {{ range where .Site.Pages "Params.category" "Techniques"}}
-        {{ partial "modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
+        {{ partial "tech-radar-modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
     {{ end }}
 
     {{ range where .Site.Pages "Params.category" "Tools"}}
-        {{ partial "modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
+        {{ partial "tech-radar-modal.html" (dict "content" .Content "filename" .File.TranslationBaseName "name" .Params.Name "image" .Params.Image) }}
     {{ end }}
   </div>
 
 </body>
-
-{{- partial "footer.html" . -}}

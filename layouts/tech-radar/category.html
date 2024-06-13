@@ -1,5 +1,5 @@
-{{- partial "head.html" . -}}
-{{- partial "header.html" . -}}
+{{- partial "tech-radar-head.html" . -}}
+{{- partial "tech-radar-header.html" . -}}
 
 <main>
   <div class="page-wrapper">
@@ -22,7 +22,7 @@
       <h2 class="m-0">Adopt</h2>
       </div>
     </div>
-    
+
     <div class="grid-flex grid-cards">
         {{ range where .Pages "Params.ring" "Adopt" }}
             <div class="column w-16">
@@ -36,7 +36,7 @@
         <h2 class="m-0">Can Use</h2>
         </div>
       </div>
-  
+
       <div class="grid-flex grid-cards">
         {{ range where .Pages "Params.ring" "Can Use" }}
             <div class="column w-16">
@@ -44,13 +44,13 @@
             </div>
         {{ end }}
       </div>
-  
+
       <div class="grid-flex v-align-middle">
         <div class="column">
         <h2 class="m-0">Assess</h2>
         </div>
       </div>
-    
+
       <div class="grid-flex grid-cards">
         {{ range where .Pages "Params.ring" "Assess" }}
             <div class="column w-16">
@@ -58,13 +58,13 @@
             </div>
         {{ end }}
       </div>
-  
+
       <div class="grid-flex v-align-middle">
           <div class="column">
           <h2 class="m-0">[Deprecated]</h2>
           </div>
         </div>
-    
+
         <div class="grid-flex grid-cards">
             {{ range where .Pages "Params.ring" "Deprecated" }}
                 <div class="column w-16">
@@ -74,5 +74,3 @@
           </div>
     </div>
   </main>
-
-{{- partial "footer.html" . -}}

@@ -1,5 +1,5 @@
-{{- partial "head.html" . -}}
-{{- partial "header.html" . -}}
+{{- partial "tech-radar-head.html" . -}}
+{{- partial "tech-radar-header.html" . -}}
 
 <main class="page-radar">
   <div class="page-wrapper">
@@ -10,7 +10,7 @@
         Ring : <i>{{ .Params.Ring }}</i></p>
       </div>
       <div class="column text-right">
-        <a href="/{{ lower .Params.Category}}/"
+        <a href="/architecture/tech-radar/{{ lower .Params.Category }}/"
           class="btn bg-gradient-main-color fa-arrow-left left link-homepage"
           >Back to {{ .Params.Category }}</a
         >
@@ -18,10 +18,8 @@
     </div>
 
     <div class="grid-flex">
-      <div class="column w-25"><img src="{{ .Params.Image}}" /></div>
+      <div class="column w-25"><img src="{{ .Params.Image }}" alt="{{ .Params.Name }}"/></div>
       <div class="column">{{ .Content }}</div>
     </div>
   </div>
 </main>
-
-{{- partial "footer.html" . -}}

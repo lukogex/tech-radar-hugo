@@ -13,9 +13,36 @@ You can find more information about it [here](https://www.thoughtworks.com/radar
 
 ![tech-radar](/static/images/preview-rings.png)
 
+### Categories
+
+- Lang-Frameworks
+- Platforms
+- Techniques
+- Tools
+
+### Rings
+
+- Adopt
+  We have capacity to use these solutions, they have already been deployed in production.
+  First choices to start a new project.
+- Can Use
+  Pertinence of those solutions have been demonstrated.
+  You can use it on your project but you need to provide a reason to not use the default choice.
+- Assess
+  These solutions may bring values.
+  It is necessary to assess and test them in our environment to confirm or not this vision.
+- Deprecated/Rejected
+  For various reasons, these solutions are no longer the first choices or are not recommended (anymore).
+
 ### Source Code
 
-The javascript source code of the radar has been copied from [here](https://github.com/agilepartner/tech-radar-js)
+The javascript source code of the radar has been copied from [here](https://github.com/agilepartner/tech-radar-js).
+
+## License
+
+Even when the CC licenses do not require a copy of the license I've added one from [here](https://github.com/idleberg/Creative-Commons-Markdown/releases/tag/v0.4.1) to make it visible in the same manner as for other licenses.
+
+This project is based on the work of [Yoan Thirion](https://www.linkedin.com/in/yoanthirion/) [here](https://github.com/ythirion/tech-radar-hugo).
 
 ## Usage
 

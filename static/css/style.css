@@ -3089,13 +3089,6 @@ html.modal-open {
     .page-fullscreen p {
       font-size: 1.8rem; } }
 
-.page-footer {
-  padding: 2rem 0;
-  border-top: 1px solid #d7d7d7;
-  text-align: center; }
-  .page-footer img {
-    margin-left: 20px; }
-
 .grid-flex {
   display: -webkit-box;
   display: -moz-box;
@@ -4260,11 +4253,3 @@ html, body {
         flex: 0 0 100%; }
         .page-radar .grid-flex .column:first-child {
           text-align: center; } }
-
-.konami { 
-  position:fixed; 
-  bottom:30px; 
-  background-position:0px -178px; 
-  z-index:1000;
-  display: none;
-}
