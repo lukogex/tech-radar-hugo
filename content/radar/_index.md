@@ -1,4 +1,0 @@
-+++
-title="Radar"
-layout="radar"
-+++
