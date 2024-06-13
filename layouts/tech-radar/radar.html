@@ -3,7 +3,7 @@
 <body>
 
 {{ with resources.Get "tech-radar/site.js" }}
-  {{ if hugo.IsDevelopment }
+  {{ if hugo.IsDevelopment }}
     {{ with . | js.Build }}
       <script src="{{ .RelPermalink }}"></script>
     {{ end }}
