@@ -16,11 +16,11 @@ const MalformedDataError = require('../exceptions/malformedDataError');
 const ContentValidator = require('./contentValidator');
 const ExceptionMessages = require('./exceptionMessages');
 
-const CSVBuilder = function (url) {
+const CSVBuilder = function (csvUrl) {
     var self = {};
 
     self.build = function () {
-        d3.csv(url, createBlips);
+        d3.csv(csvUrl, createBlips);
     }
 
     var createBlips = function (data) {
