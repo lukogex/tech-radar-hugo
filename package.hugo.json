@@ -5,13 +5,13 @@
     "esbuild": "0.21.5"
   },
   "dependencies": {
-    "chance": "^1.0.4",
-    "d3": "^4.2.6",
-    "d3-tip": "^0.7.1",
-    "lodash": "^4.16.2",
+    "chance": "^1.1.11",
+    "d3": "^7.9.0",
+    "d3-tip": "^0.9.1",
+    "lodash": "^4.17.21",
     "node-sass": "^9.0.0",
-    "sanitize-html": "^1.13.0",
-    "tabletop": "^1.4.3"
+    "sanitize-html": "^2.13.0",
+    "tabletop": "^1.6.3"
   },
   "description": "A tech-radar Hugo module",
   "homepage": "https://github.com/lukogex/tech-radar-hugo",

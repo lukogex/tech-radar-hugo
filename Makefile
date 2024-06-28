@@ -1,5 +1,7 @@
 .PHONY: test
-test:
+test-esbuild:
+	rm -rf node_modules
+	rm package-lock.json
 	hugo mod npm pack
 	npm install
 	mkdir -p public
