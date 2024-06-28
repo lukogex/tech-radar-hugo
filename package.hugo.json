@@ -1,13 +1,12 @@
 {
   "author": "lukogex",
-  "browser": { "child_process": false, "fs": false },
+  "browser": { "child_process": false, "fs": false, "http": false, "https": false },
   "dependencies": {
     "chance": "^1.0.4",
     "d3": "^4.2.6",
     "d3-tip": "^0.7.1",
     "lodash": "^4.16.2",
-    "//comment": "TODO: Needs to be updated to 6.0+ to fit Node 16 version https://www.npmjs.com/package/node-sass",
-    "node-sass": "^4.10.0",
+    "node-sass": "^9.0.0",
     "sanitize-html": "^1.13.0",
     "tabletop": "^1.4.3"
   },

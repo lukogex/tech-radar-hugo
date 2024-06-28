@@ -1,5 +1,5 @@
 require('./common');
-require('./assets/images/radar/radar_legend.png');
+// require('./assets/images/radar/radar_legend.png');
 
 const CSVBuilder = require('./util/factory');
 
