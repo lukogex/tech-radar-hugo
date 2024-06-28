@@ -1,5 +1,6 @@
 {
   "author": "lukogex",
+  "browser": { "child_process": false, "fs": false },
   "dependencies": {
     "chance": "^1.0.4",
     "d3": "^4.2.6",

@@ -3,5 +3,5 @@ require('./assets/images/radar/radar_legend.png');
 
 const CSVBuilder = require('./util/factory');
 
-var builder = CSVBuilder('{{site.url}}{{site.baseurl}}/assets/radar.csv');
+var builder = CSVBuilder('tech-radar/data.csv');
 builder.init().build();
