@@ -3,32 +3,43 @@
   "browser": {
     "child_process": false,
     "fs": false,
-    "http": false,
-    "https": false,
-    "url": false
+    "http": "stream-http",
+    "https": "https-browserify"
   },
   "comments": {
     "dependencies": {
+      "buffer": "project",
       "chance": "project",
       "d3": "project",
       "d3-tip": "project",
+      "events": "project",
+      "https-browserify": "project",
       "lodash": "project",
       "node-sass": "project",
       "sanitize-html": "project",
-      "tabletop": "project"
+      "stream-http": "project",
+      "tabletop": "project",
+      "url": "project",
+      "util": "project"
     },
     "devDependencies": {
       "esbuild": "project"
     }
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "chance": "^1.1.11",
-    "d3": "^7.9.0",
+    "d3": "^4.2.6",
     "d3-tip": "^0.9.1",
+    "events": "^3.3.0",
+    "https-browserify": "^1.0.0",
     "lodash": "^4.17.21",
     "node-sass": "^9.0.0",
     "sanitize-html": "^2.13.0",
-    "tabletop": "^1.6.3"
+    "stream-http": "^3.2.0",
+    "tabletop": "^1.6.3",
+    "url": "^0.11.3",
+    "util": "^0.12.5"
   },
   "description": "A tech-radar Hugo module",
   "devDependencies": {

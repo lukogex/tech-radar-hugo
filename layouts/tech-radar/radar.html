@@ -6,7 +6,7 @@
 {{ with resources.Get "tech-radar/site.js" }}
   {{ if hugo.IsDevelopment }}
     {{ $opts := dict "externals" $externals }}
-    {{ with . | js.Build $opts }}
+    {{ with . | js.Build }}
       <script src="{{ .RelPermalink }}"></script>
     {{ end }}
   {{ else }}

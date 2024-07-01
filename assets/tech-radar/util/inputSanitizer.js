@@ -23,7 +23,10 @@ const InputSanitizer = function () {
     function trimWhiteSpaces(blip) {
       var processedBlip = {};
       _.forOwn(blip, function(value, key) {
-        processedBlip[key.trim()] = value.trim();
+        // TODO: It adds the empty last line.
+        if (value !== undefined && !(key == "name" && value === "")) {
+          processedBlip[key.trim()] = value.trim();
+        }
       });
       return processedBlip;
     }
