@@ -36,7 +36,7 @@ You can find more information about it [here](https://www.thoughtworks.com/radar
 
 ### Source Code
 
-The javascript source code of the radar has been copied from [here](https://github.com/agilepartner/tech-radar-js).
+The javascript source code of the radar has been copied initially from [here](https://github.com/agilepartner/tech-radar-js).
 
 ## License
 
