@@ -1,6 +1,6 @@
 .PHONY: test
 test-esbuild:
-	rm -rf node_modules
+	rm -rf node_modules public
 	rm package-lock.json
 	hugo mod npm pack
 	npm install

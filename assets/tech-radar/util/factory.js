@@ -1,9 +1,9 @@
 const d3 = require('d3');
 const _ = {
-    map: require('lodash/map'),
-    uniqBy: require('lodash/uniqBy'),
-    capitalize: require('lodash/capitalize'),
-    each: require('lodash/each')
+  map: require('lodash/map'),
+  uniqBy: require('lodash/uniqBy'),
+  capitalize: require('lodash/capitalize'),
+  each: require('lodash/each')
 };
 
 const InputSanitizer = require('./inputSanitizer');
@@ -17,95 +17,108 @@ const ContentValidator = require('./contentValidator');
 const ExceptionMessages = require('./exceptionMessages');
 
 const CSVBuilder = function (url) {
-    var self = {};
+  var self = {};
 
-    self.build = function () {
-        d3.csv(url, createBlips);
+  self.build = function () {
+    d3.csv(url, createBlips);
+  }
+
+  var createBlips = function (data) {
+    try {
+      var columnNames = data['columns'];
+      delete data['columns'];
+      var contentValidator = new ContentValidator(columnNames);
+      contentValidator.verifyContent();
+      contentValidator.verifyHeaders();
+      var blips = _.map(data, new InputSanitizer().sanitize);
+      var validBlips = validateBlips(blips);
+      plotRadar('Tech-radar', validBlips);
+      loadBuddy();
+    } catch (exception) {
+      plotErrorMessage(exception);
     }
+  }
 
-    var createBlips = function (data) {
-        try {
-            var columnNames = data['columns'];
-            delete data['columns'];
-            var contentValidator = new ContentValidator(columnNames);
-            contentValidator.verifyContent();
-            contentValidator.verifyHeaders();
-            var blips = _.map(data, new InputSanitizer().sanitize);
-            plotRadar('Tech-radar', blips);
-            loadBuddy();
-        } catch (exception) {
-            plotErrorMessage(exception);
-        }
-    }
+  // TODO(): Move this to contentValidator.js
+  var validateBlips = function (blips) {
+    var validBlips = [];
+    _.each(blips, function(blip, i) {
+      if (blip.name !== "" && blip.quadrant !== "" && blip.ring !== "") {
+        validBlips.push(blip);
+      }
+    });
 
-    self.init = function () {
-        plotLoading();
-        return self;
-    };
+    return validBlips;
+  }
 
+  self.init = function () {
+    plotLoading();
     return self;
+  };
+
+  return self;
 };
 
 const plotRadar = function (title, blips) {
-    document.title = title;
-    d3.selectAll(".loading").remove();
+  document.title = title;
+  d3.selectAll(".loading").remove();
 
-    var rings = _.map(_.uniqBy(blips, 'ring'), 'ring');
-    var ringMap = {};
-    var maxRings = 4;
+  var rings = _.map(_.uniqBy(blips, 'ring'), 'ring');
+  var ringMap = {};
+  var maxRings = 4;
 
-    _.each(rings, function (ringName, i) {
-        if (i == maxRings) {
-            throw new MalformedDataError(ExceptionMessages.TOO_MANY_RINGS);
-        }
-        ringMap[ringName] = new Ring(ringName, i);
-    });
+  _.each(rings, function (ringName, i) {
+    if (i == maxRings) {
+      throw new MalformedDataError(ExceptionMessages.TOO_MANY_RINGS);
+    }
+    ringMap[ringName] = new Ring(ringName, i);
+  });
 
-    var quadrants = {};
-    _.each(blips, function (blip) {
-        if (!quadrants[blip.quadrant]) {
-            quadrants[blip.quadrant] = new Quadrant(_.capitalize(blip.quadrant));
-        }
-        quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew.toLowerCase() === 'true', blip.topic, blip.description))
-    });
+  var quadrants = {};
+  _.each(blips, function (blip) {
+    if (!quadrants[blip.quadrant]) {
+      quadrants[blip.quadrant] = new Quadrant(_.capitalize(blip.quadrant));
+    }
+    quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew.toLowerCase() === 'true', blip.topic, blip.description))
+  });
 
-    var radar = new Radar();
-    _.each(quadrants, function (quadrant) {
-        radar.addQuadrant(quadrant)
-    });
+  var radar = new Radar();
+  _.each(quadrants, function (quadrant) {
+    radar.addQuadrant(quadrant)
+  });
 
-    var size = (window.innerHeight - 133) < 620 ? 620 : window.innerHeight - 133;
+  var size = (window.innerHeight - 133) < 620 ? 620 : window.innerHeight - 133;
 
-    new GraphingRadar(size, radar).init().plot();
+  new GraphingRadar(size, radar).init().plot();
 }
 
 function plotLoading(content) {
-    var content = d3.select('radar')
-        .append('div')
-        .attr('class', 'loading')
-        .append('div')
-        .attr('class', 'input-sheet');
+  var content = d3.select('radar')
+    .append('div')
+    .attr('class', 'loading')
+    .append('div')
+    .attr('class', 'input-sheet');
 
-    document.title = "Building...";
+  document.title = "Building...";
 }
 
 function plotErrorMessage(exception) {
-    d3.selectAll(".loading").remove();
-    var message = 'Oops! It seems like there are some problems with loading your data. ';
+  d3.selectAll(".loading").remove();
+  var message = 'Oops! It seems like there are some problems with loading your data. ';
 
-    if (exception instanceof MalformedDataError) {
-        message = message.concat(exception.message);
-    } else {
-        console.error(exception);
-    }
+  if (exception instanceof MalformedDataError) {
+    message = message.concat(exception.message);
+  } else {
+    console.error(exception);
+  }
 
-    d3.select('radar')
-        .append('div')
-        .attr('class', 'error-container')
-        .append('div')
-        .attr('class', 'error-container__message')
-        .append('p')
-        .html(message);
+  d3.select('radar')
+    .append('div')
+    .attr('class', 'error-container')
+    .append('div')
+    .attr('class', 'error-container__message')
+    .append('p')
+    .html(message);
 }
 
 module.exports = CSVBuilder;
