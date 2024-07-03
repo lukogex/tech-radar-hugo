@@ -1,7 +1,11 @@
-require('./common');
-require('../src/assets/images/radar/radar_legend.png');
+import * as params from '@params';
+import { Buffer } from 'buffer';
 
 const CSVBuilder = require('./util/factory');
 
-var builder = CSVBuilder('{{site.url}}{{site.baseurl}}/assets/radar.csv');
+window.process = require('process');
+window.global = window;
+window.Buffer = Buffer;
+
+var builder = CSVBuilder(params.baseUrl + '/tech-radar/data/index.csv');
 builder.init().build();
