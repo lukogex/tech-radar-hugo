@@ -23,53 +23,54 @@
     </div>
 
     <div class="grid-flex grid-cards">
-        {{ range where .Pages "Params.ring" "Adopt" }}
-            <div class="column w-16">
-            <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
-            </div>
-        {{ end }}
-      </div>
-
-      <div class="grid-flex v-align-middle">
-        <div class="column">
-        <h2 class="m-0">Can Use</h2>
+      {{ range where .Pages "Params.ring" "Adopt" }}
+        <div class="column w-16">
+          <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
         </div>
-      </div>
-
-      <div class="grid-flex grid-cards">
-        {{ range where .Pages "Params.ring" "Can Use" }}
-            <div class="column w-16">
-            <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
-            </div>
-        {{ end }}
-      </div>
-
-      <div class="grid-flex v-align-middle">
-        <div class="column">
-        <h2 class="m-0">Assess</h2>
-        </div>
-      </div>
-
-      <div class="grid-flex grid-cards">
-        {{ range where .Pages "Params.ring" "Assess" }}
-            <div class="column w-16">
-            <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
-            </div>
-        {{ end }}
-      </div>
-
-      <div class="grid-flex v-align-middle">
-          <div class="column">
-          <h2 class="m-0">Deprecated</h2>
-          </div>
-        </div>
-
-        <div class="grid-flex grid-cards">
-            {{ range where .Pages "Params.ring" "Deprecated" }}
-                <div class="column w-16">
-                <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
-                </div>
-            {{ end }}
-          </div>
+      {{ end }}
     </div>
-  </main>
+
+    <div class="grid-flex v-align-middle">
+      <div class="column">
+        <h2 class="m-0">Can Use</h2>
+      </div>
+    </div>
+
+    <div class="grid-flex grid-cards">
+      {{ range where .Pages "Params.ring" "Can Use" }}
+        <div class="column w-16">
+          <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="grid-flex v-align-middle">
+      <div class="column">
+        <h2 class="m-0">Assess</h2>
+      </div>
+    </div>
+
+    <div class="grid-flex grid-cards">
+      {{ range where .Pages "Params.ring" "Assess" }}
+        <div class="column w-16">
+          <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="grid-flex v-align-middle">
+      <div class="column">
+        <h2 class="m-0">Deprecated</h2>
+      </div>
+    </div>
+
+    <div class="grid-flex grid-cards">
+      {{ range where .Pages "Params.ring" "Deprecated" }}
+        <div class="column w-16">
+          <a href="{{ .File.TranslationBaseName }}">{{ .Params.name }}</a>
+        </div>
+      {{ end }}
+    </div>
+
+  </div>
+</main>
