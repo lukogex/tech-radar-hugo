@@ -2490,17 +2490,6 @@ output:-moz-ui-invalid {
   background-color: #d7d7d7;
   cursor: not-allowed; }
 
-.input-search {
-  position: relative;
-  overflow: hidden; }
-  .input-search input {
-    padding-right: 1rem; }
-  .input-search button {
-    position: absolute;
-    right: 0;
-    top: 1px;
-    padding: 1.8rem 2.3rem; }
-
 .input-animation {
   position: relative; }
   .input-animation input:-webkit-autofill, .input-animation textarea:-webkit-autofill, .input-animation :-webkit-autofill {
@@ -2814,21 +2803,6 @@ output:-moz-ui-invalid {
     border-color: #d7d7d7; }
   .custom-input-radio.is-disabled label:after {
     color: #d7d7d7; }
-
-.list-social li {
-  display: inline-block;
-  margin-right: 1rem;
-  font-size: 2rem; }
-  .list-social li:last-child {
-    margin-right: 0; }
-  .list-social li .link-facebook {
-    color: #4464B4; }
-  .list-social li .link-twitter {
-    color: #1C9CF4; }
-  .list-social li .link-linkedin {
-    color: #0473B3; }
-  .list-social li .link-mail {
-    color: #c42821; }
 
 html.modal-open {
   overflow: hidden; }
@@ -3657,12 +3631,12 @@ html.modal-open {
           max-width: 100%;
           margin-bottom: 1rem;
           font-size: 2.5rem; }
-        .page-header .page-wrapper .list-social {
+        .page-header .page-wrapper {
           flex: 0 0 100%;
           max-width: 100%; }
-          .page-header .page-wrapper .list-social > li {
+          .page-header .page-wrapper {
             margin: 0 1.5rem; }
-            .page-header .page-wrapper .list-social > li a {
+            .page-header .page-wrapper {
               font-size: 2rem; } }
 
 .nav-breadcrumb li {

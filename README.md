@@ -1,6 +1,13 @@
 # Hugo Module
 
-TODO
+Include the Hugo module into your project by adding it to the 
+```
+module:
+  imports:
+  - path: 'github.com/lukogex/tech-radar-hugo'
+```
+
+Follow the description in the [usage section](#usage) to add items to the tech radar.
 
 # Tech radar
 
@@ -29,7 +36,7 @@ You can find more information about it [here](https://www.thoughtworks.com/radar
 - Assess
   These solutions may bring values.
   It is necessary to assess and test them in our environment to confirm or not this vision.
-- Deprecated/Rejected
+- Deprecated
   For various reasons, these solutions are no longer the first choices or are not recommended (anymore).
 
 ### Source Code
@@ -44,7 +51,7 @@ This project is based on the work of [Yoan Thirion](https://www.linkedin.com/in/
 
 ## Usage
 
-The tech radar is built based on the elements specified in the content folder.  
+The tech radar is built based on the elements specified in the content folder.
 
 To add new content to the radar:
 * **Create a new md file** under the desired category folder in the `content` folder
@@ -52,16 +59,16 @@ To add new content to the radar:
     * platforms
     * techniques
     * tools
-* **Add meta data to the file** in the front matter (in toml format)
-```toml
-+++
-name= [name of the concept]
-image= [relative image url]
-category= [Languages-Frameworks or Platforms or Techniques or Tools]
-ring= [Adopt or Can Use or Assess or Deprecated]
-type="post"
-layout="details"
-+++
+* **Add meta data to the file** in the front matter (in yaml format)
+```yaml
+---
+name: [name of the concept]
+image: [relative image url]
+category: [Languages-Frameworks or Platforms or Techniques or Tools]
+ring: [Adopt or Can Use or Assess or Deprecated]
+type: tech-radar
+layout: details
+---
 ```
 * **Add details to the file**
     * `What is it ?` : Describe the concept / technology
@@ -72,16 +79,16 @@ layout="details"
 
 ### File Example
 
-A file should look like this :
+A file should look like this:
 ```
-+++
-name= "Angular"
-image= "/images/languages-frameworks/angular.png"
-category= "Languages-Frameworks"
-ring= "Can Use"
-type="post"
-layout="details"
-+++
+---
+name: Angular
+image: /images/tech-radar/languages-frameworks/angular.png
+category: Languages-Frameworks
+ring: Can Use
+type: tech-radar
+layout: details
+---
 
 # What is it ?
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra ultricies lectus vitae elementum. Suspendisse neque nisl, venenatis vel nunc cursus, pharetra finibus elit. In aliquam nisl eu sapien pulvinar, ac ultrices justo tincidunt. Maecenas sed ipsum libero. Nulla porttitor, magna ac efficitur vestibulum, urna neque porttitor velit, ac imperdiet elit mauris vel neque. Vivamus et scelerisque libero. Aenean imperdiet dignissim viverra. Phasellus aliquet diam et velit auctor mollis. In pulvinar dolor tristique mollis dignissim. Nullam et sem ac odio interdum vehicula sed vel est.
