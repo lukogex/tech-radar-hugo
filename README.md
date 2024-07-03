@@ -11,11 +11,9 @@ You can find more information about it [here](https://www.thoughtworks.com/radar
 
 ![tech-radar](static/images/preview.png)
 
-![tech-radar](/static/images/preview-rings.png)
-
 ### Categories
 
-- Lang-Frameworks
+- Languages-Frameworks
 - Platforms
 - Techniques
 - Tools
