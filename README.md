@@ -50,6 +50,8 @@ You can find more information about it [here](https://www.thoughtworks.com/radar
 ### Source Code
 
 The javascript source code of the radar has been copied initially from [here](https://github.com/agilepartner/tech-radar-js).
+The bundeled source code has been used in the upstream [tech-radar-hugo](https://github.com/ythirion/tech-radar-hugo) project as well.
+I've added the source code here to have it in an editable manner and bundeled by Hugo's [js.Build](https://gohugo.io/functions/js/build/) when building the website.
 
 ## License
 
@@ -79,9 +81,9 @@ layout: details
 ---
 ```
 * **Add details to the file**
-    * `What is it ?` : Describe the concept / technology
-    * `Why ?` : Explain why is it useful and when
-    * `For who ?` : Make a list of roles that could be positively impacted by this technology (ex: Product Owner, Developers, ...)
+    * `What is It?` : Describe the concept / technology
+    * `Why?` : Explain why is it useful and when
+    * `For Whom?` : Make a list of roles that could be positively impacted by this technology (ex: Product Owner, Developers, ...)
     * `Resources` : Useful resources on this technology
     * `Contacts` : Make a list of teams or people using the technology (people that could help on the topic in the near future)
 
@@ -93,7 +95,7 @@ A file could look like this:
 name: Golang
 image: /images/tech-radar/golang.png
 category: Languages-Frameworks
-ring: Can Use
+ring: Adopt
 type: tech-radar
 layout: details
 ---
