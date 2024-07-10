@@ -1,4 +1,6 @@
 {
+  "name": "tech-radar-hugo",
+  "version": "1.0.0",
   "author": "lukogex",
   "browser": { "child_process": false, "fs": false, "http": "stream-http", "https": "https-browserify" },
   "devDependencies": {
@@ -28,6 +30,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lukogex/tech-radar-hugo"
-  },
-  "version": "0.0.0"
+  }
 }

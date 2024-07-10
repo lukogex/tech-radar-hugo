@@ -1,10 +1,18 @@
 # Hugo Module
 
-Include the Hugo module into your project by adding it to the 
+Include the Hugo module into your project by adding it to the config.yaml. 
 ```
 module:
   imports:
   - path: 'github.com/lukogex/tech-radar-hugo'
+```
+
+Install the latest versions of all module dependencies.
+`hugo mod get -u`
+Install javascript dependencies.
+```
+hugo mod npm pack
+npm install
 ```
 
 Follow the description in the [usage section](#usage) to add items to the tech radar.
@@ -42,6 +50,8 @@ You can find more information about it [here](https://www.thoughtworks.com/radar
 ### Source Code
 
 The javascript source code of the radar has been copied initially from [here](https://github.com/agilepartner/tech-radar-js).
+The bundeled source code has been used in the upstream [tech-radar-hugo](https://github.com/ythirion/tech-radar-hugo) project as well.
+I've added the source code here to have it in an editable manner and bundeled by Hugo's [js.Build](https://gohugo.io/functions/js/build/) when building the website.
 
 ## License
 
@@ -71,45 +81,46 @@ layout: details
 ---
 ```
 * **Add details to the file**
-    * `What is it ?` : Describe the concept / technology
-    * `Why ?` : Explain why is it useful and when
-    * `For who ?` : Make a list of roles that could be positively impacted by this technology (ex: Product Owner, Developers, ...)
+    * `What is It?` : Describe the concept / technology
+    * `Why?` : Explain why is it useful and when
+    * `For Whom?` : Make a list of roles that could be positively impacted by this technology (ex: Product Owner, Developers, ...)
     * `Resources` : Useful resources on this technology
     * `Contacts` : Make a list of teams or people using the technology (people that could help on the topic in the near future)
 
 ### File Example
 
-A file should look like this:
+A file could look like this:
 ```
 ---
-name: Angular
-image: /images/tech-radar/languages-frameworks/angular.png
+name: Golang
+image: /images/tech-radar/golang.png
 category: Languages-Frameworks
-ring: Can Use
+ring: Adopt
 type: tech-radar
 layout: details
 ---
 
-# What is it ?
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra ultricies lectus vitae elementum. Suspendisse neque nisl, venenatis vel nunc cursus, pharetra finibus elit. In aliquam nisl eu sapien pulvinar, ac ultrices justo tincidunt. Maecenas sed ipsum libero. Nulla porttitor, magna ac efficitur vestibulum, urna neque porttitor velit, ac imperdiet elit mauris vel neque. Vivamus et scelerisque libero. Aenean imperdiet dignissim viverra. Phasellus aliquet diam et velit auctor mollis. In pulvinar dolor tristique mollis dignissim. Nullam et sem ac odio interdum vehicula sed vel est.
+# What is It?
 
-Fusce vel malesuada neque, ut porttitor nulla. Etiam maximus consectetur bibendum. Aliquam vestibulum elementum elit eu lacinia. Sed at tristique enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla hendrerit sed magna et vehicula. Aenean rutrum placerat diam sit amet pharetra. Cras tristique aliquam augue sit amet volutpat. In finibus lobortis rutrum. Phasellus fringilla rutrum tortor, at convallis lacus maximus eu. Nam et hendrerit ligula.
+Go is an open source programming language designed for building scalable, secure and reliable software.
 
-# Why ?
-Sed ullamcorper nibh eget massa dapibus hendrerit. Nulla facilisi. Aliquam erat volutpat. Ut eu ornare ipsum. Aenean molestie metus non orci faucibus pulvinar. Pellentesque maximus urna diam, vitae consectetur sapien sagittis id. Etiam enim erat, egestas id congue ut, dapibus ut lorem. Aenean scelerisque ligula id arcu rhoncus, id pharetra libero ultricies. Donec varius porta risus, a posuere libero fringilla a. Etiam id felis eu mauris euismod ullamcorper id ac massa. Aenean commodo pretium ex, et hendrerit ex pulvinar vel. Nam in nibh in eros maximus auctor. Maecenas lacus ipsum, porttitor vitae nisl ut, venenatis viverra ante. Mauris lacinia posuere sem in auctor. Quisque sed ultricies magna. Aliquam eu mauris commodo, ullamcorper turpis vestibulum, hendrerit augue.
+# Why?
 
-# For who ?
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-* Nulla mattis metus a turpis fermentum, at fermentum mauris porttitor.
-* Morbi porttitor magna dictum condimentum faucibus.
-* Donec eget diam pharetra, hendrerit velit quis, sodales massa.
-* Sed dictum nunc eu ipsum consequat, ac rutrum lectus consequat.
-* Duis ut arcu mollis, pellentesque lacus eu, malesuada ante.
+Especially for Kubernetes workloads we need an alternative to the heavy weighted JVM applications.
+Go fits very good here with better performance and its far lower sartup times and memory consumption.
+Even compared to Java native compiled images Go has advantages due to its simplicity, especially in regards of package manegement and CI jobs.
+
+# For Whom?
+
+Mainly used for backend microservices.
+Especially for adapter services which are used to decouple other systems.
 
 # Resources
-- [Cheat sheet](https://angular.io/guide/cheatsheet)
-- [Learn angular](https://hackr.io/tutorials/learn-angular)
+
+- https://go.dev/
+- https://gobyexample.com/
 
 # Contacts
-- [Yoan Thirion](https://www.linkedin.com/in/yoanthirion/)
+
+- [Lukas Kranabetter](mailto:me@lukogex.net)
 ```
