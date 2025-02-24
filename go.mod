@@ -1,3 +1,3 @@
 module github.com/lukogex/tech-radar-hugo
 
-go 1.20
+go 1.23

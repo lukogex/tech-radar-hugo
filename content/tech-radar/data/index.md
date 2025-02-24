@@ -4,5 +4,6 @@ type: tech-radar
 layout: data 
 outputs: 
 - csv
-bookHidden: true
+build:
+  list: never
 ---
