@@ -6,5 +6,4 @@ outputs:
 - csv
 build:
   list: never
-  render: never
 ---
