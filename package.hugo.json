@@ -1,26 +1,26 @@
 {
   "name": "tech-radar-hugo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "lukogex",
   "browser": { "child_process": false, "fs": false, "http": "stream-http", "https": "https-browserify" },
   "devDependencies": {
-    "esbuild": "0.21.5"
+    "esbuild": "~0.25.0"
   },
   "dependencies": {
-    "buffer": "^6.0.3",
-    "chance": "^1.1.11",
-    "d3": "^4.2.6",
-    "d3-tip": "^0.9.1",
-    "events": "^3.3.0",
-    "lodash": "^4.17.21",
-    "node-sass": "^9.0.0",
-    "sanitize-html": "^2.13.0",
-    "tabletop": "^1.6.3",
-    "url": "^0.11.3",
-    "util": "^0.12.5",
-    "stream-http": "^3.2.0",
-    "process": "^0.11.10",
-    "https-browserify": "^1.0.0"
+    "buffer": "~6.0.3",
+    "chance": "~1.1.12",
+    "d3": "~4.12.2",
+    "d3-tip": "~0.9.1",
+    "events": "~3.3.0",
+    "lodash": "~4.17.21",
+    "sass": "~1.85.0",
+    "sanitize-html": "~2.14.0",
+    "tabletop": "~1.6.3",
+    "url": "~0.11.4",
+    "util": "~0.12.5",
+    "stream-http": "~3.2.0",
+    "process": "~0.11.10",
+    "https-browserify": "~1.0.0"
   },
   "description": "A tech-radar Hugo module",
   "homepage": "https://github.com/lukogex/tech-radar-hugo",
