@@ -124,3 +124,11 @@ Especially for adapter services which are used to decouple other systems.
 
 - [Lukas Kranabetter](mailto:me@lukogex.net)
 ```
+
+### Configuration
+
+You need to set the base path for tech radar in your site configuration in hugo.yaml.
+```yaml
+params:
+  techRadarBasePath: /basePath/tech-radar
+```
