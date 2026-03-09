@@ -1,2 +1,2 @@
 params:
-  techRadarBaseUrl: /architecture/tech-radar
+  techRadarBasePath: /architecture/tech-radar
