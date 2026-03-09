@@ -9,7 +9,7 @@
         Ring : <i>{{ .Params.Ring }}</i></p>
       </div>
       <div class="column text-right">
-        <a href="/architecture/tech-radar/{{ lower .Params.Category }}/"
+        <a href="{{ site.Params.techRadarBasePath }}/{{ lower .Params.Category }}/"
           class="btn bg-gradient-main-color fa-arrow-left left link-homepage"
           >Back to {{ .Params.Category }}</a
         >
